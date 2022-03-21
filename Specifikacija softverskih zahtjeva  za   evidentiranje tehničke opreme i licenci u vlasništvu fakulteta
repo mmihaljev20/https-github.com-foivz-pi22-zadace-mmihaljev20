@@ -1,0 +1,153 @@
+<h1 align='center'>Specifikacija softverskih zahtjeva za evidentiranje tehničke opreme i licenci u vlasništvu fakulteta
+</h1>
+
+# 1. Uvod
+
+## 1.1. Svrha
+-	Specificirati zahtjeve softvera  za evidentiranje tehničke opreme i licenci u vlasništvu fakulteta
+-	Programeri, testeri, softverski arhitekti (studenti), naručitelj (nastavnici kolegija)
+
+## 1.2. Opseg
+-	Rješenje se bavi na zahtjev fakulteta
+-	Upotrebljavati će se softversko rješenje u kontekstu evidencije opreme
+-	Novo softversko rješenje za evidenciju opreme
+-	Potpuno novo rješenje
+-	Softver će raditi: evidenciju zaprimljene tehničke opreme, podaci o opremi, rezervacija opreme
+-	Softver neće bilježiti moguću oštećenu opremu pri povratku posudbe 
+-	Prednosti: brža evidencija posuđene tehničke opreme i osobe koja ju je posudila, rezervacija, kontrolirani unos podataka i izvještaji…
+
+
+## 1.3. Definicije,akronimi i skracenice
+-	Način korištenja opreme ( misli se na razlog posudbe )
+
+## 1.4. Reference
+- IEEE Recommended Practice for Software Requirements Specifications
+-	Specifikacija zahtjeva fakulteta
+
+## 1.5. Struktura dokumenta
+-	U drugom poglavlju se nalazi sadržaj budućeg softverskog rješenja…
+-	U trećem poglavlju unosimo funkcionalne zahtjeve…
+-	U četvrtom poglavlju upisujemo nefunkcionalne zahtjeve 
+-	U petom poglavlju se nalazi skica sučelja softvera
+
+# 2. OPĆENITI OPIS
+
+## 2.1. Perspektiva prozvoda
+-	Samostalno rješenje
+-	Ima interakciju i povezanost sa Moodle sustavom
+-	Nema izravne interakcije sa hardverom ili komunikacijskim uređajima
+
+## 2.2. Funkcije proizvoda
+-	Ograničavanje pristupa evidenciji
+-	Evidentiranje i unos jedinstvenog identifikatora zaprimljene opreme i osobe odgovorne za nabavu te opreme
+-	Pregledavanje registra opreme te način korištenja
+-	Rezervacija opreme
+-	Evidencija posudbe
+-	Pregled statističkih podataka 
+-	Slanje notifikacija o opremi
+-	Pregled i zapis izvora financiranja
+
+## 2.3. Karakteristike korisnika
+-	Zaposlenici fakulteta (Nastavnici) – svi nastavnici imaju istu razinu dozvola 
+-	Studenti – samo odobrenjem fakulteta ili nastavnika su u mogućnosti korištenju
+
+## 2.4. Ogranicenja
+-	Treba voditi računa o GDPR odrednicama
+-	Izvođač je obavezan koristiti vodopadni model u razvoju softvera
+
+# 3. FUNKCIONALNI ZAHTJEVI
+| *Identifikator* | FZ-1 |
+| --- | --- |
+| *Zahtjev* | Ograničavanje pristupa evidenciji |
+| *Obrazlozenje* | Sustav radi sa važnim podacima stoga treba omogućiti pristup samo ovlaštenim osobama na upotrebu (čitanje/uređivanje/korištenje) |
+| *Nacin provjere* | Pokušaj pristupa sustavu sa odgovarajućim korisničkim podacima rezultira uspjehu pristupa, pokušaj pristupa sa neodgovarajućim korisničkim pristupom rezultira neuspjehu |
+| *Prioritet[1-5]* | 1 |
+| *Izvor* | Zaposlenici fakulteta |
+
+| *Identifikator* | FZ-2 |
+| --- | --- |
+| *Zahtjev* | Evidentiranje i unos jedinstvenog identifikatora zaprimljene opreme i osobe odgovorne za nabavu te opreme |
+| *Obrazlozenje* | Sustav će omogućiti evidenciju zaprimljene opreme, unos podataka i pregled osobe odgovorne za nabavu te opreme |
+| *Nacin provjere* | Ručno upisani podaci opreme trebaju biti trajno pohranjeni u bazu podataka i dostupni na uvid isto kao i odgovorna osoba |
+| *Prioritet[1-5]* | 2 |
+| *Izvor* | Zaposlenici fakulteta |
+
+| *Identifikator* | FZ-3 |
+| --- | --- |
+| *Zahtjev* | Pregledavanje registra opreme te način korištenja |
+| *Obrazlozenje* | Sustav će omogućiti pregledavanje registra opreme (slobodne i trenutno zauzete) i razlog posudbe te opreme |
+| *Nacin provjere* | Već prije uneseni podaci opreme i bilješke moraju biti mogući na uvid  |
+| *Prioritet[1-5]* | 3 |
+| *Izvor* | Zaposlenici fakulteta |
+
+| *Identifikator* | FZ-4 |
+| --- | --- |
+| *Zahtjev* | Rezervacija opreme |
+| *Obrazlozenje* | Sustav će omogućiti rezervaciju opreme za određeno razdoblje  |
+| *Nacin provjere* | Ispravna i omogućena rezervacija određene opreme |
+| *Prioritet[1-5]* | 4 |
+| *Izvor* | Zaposlenici fakulteta |
+
+| *Identifikator* | FZ-5 |
+| --- | --- |
+| *Zahtjev* | Evidencija posudbe |
+| *Obrazlozenje* | Sustav će omogućiti detaljnu evidenciju slobodne i zauzete opreme . |
+| *Nacin provjere* | Prethodno pohranjeni podaci u bazi podataka moraju biti dostupni na uvid |
+| *Prioritet[1-5]* | 3 |
+| *Izvor* | Zaposlenici fakulteta|
+
+| *Identifikator* | FZ-6 |
+| --- | --- |
+| *Zahtjev* | Pregled statističkih podataka  |
+| *Obrazlozenje* | Pregled statističkih podataka o količini upotrebljivosti pojedine opreme |
+| *Nacin provjere* | Ispravnost grafova na temelju prije unesenih podataka |
+| *Prioritet[1-5]* | 3 |
+| *Izvor* | Zaposlenici fakulteta |
+
+| *Identifikator* | FZ-7 |
+| --- | --- |
+| *Zahtjev* | Slanje notifikacija o opremi |
+| *Obrazlozenje* | Vrlo malen broj zaposlenika je svjesna da oprema postoji, stoga će sustav omogućiti slanje obavijesti korisnicima o postojećoj opremi |
+| *Nacin provjere* | Pokušaj slanje poruke korisnicima (zaposlenicima fakulteta) |
+| *Prioritet[1-5]* | 4 |
+| *Izvor* | Zaposlenici fakulteta |
+
+| *Identifikator* | FZ-8 |
+| --- | --- |
+| *Zahtjev* | Pregled i zapis izvora financiranja |
+| *Obrazlozenje* | Evidencija i zapis o mogućim izvorima financiranja opreme te budućem predviđanju budžeta |
+| *Nacin provjere* | Ručno uneseni izvori financiranja moraju biti trajno pohranjeni u bazu podataka  |
+| *Prioritet[1-5]* | 4 |
+| *Izvor* | Zaposlenici fakulteta |
+
+## 3.1. Dinamika realizacije zahtjeva(engl. Apportioning of requirements)
+-	U inicijalnu verziju softvera ulaze funkcionalni zahtjevi FZ-1, FZ-2, FZ-3, FZ-5, FZ-7
+
+# 4. NEFUNKCIONALNI ZAHTJEVI
+
+## 4.1. Izgled softvera
+NFZ1 - Koristi se formalan i korporativan stil 
+NFZ2 - Koriste se crna slova na bijelu podlogu i crvena boja za datume povratka opreme
+
+## 4.2. Performanse softvera
+NFZ3 – Sustav će omogućiti istovremeno korištenje barem 10 korisnika 
+
+## 4.3. Izvodenje softvera i okruzenje
+NFZ4 – Sustav treba raditi na računalima s instaliranim Windows 10 ili novijim operacijskim sustavom
+
+## 4.4. Sigurnost i privatnost
+NFZ5 - Sustav će raditi s podatcima u skladu odredbama GDPR-a
+
+## 4.5. Ostalo
+Nema dodatnih nefunkcionalnih zahtjeva
+
+# 5. SKICE ZASLONA
+
+## 5.1. Log in zaslon
+![Log In zaslon](https://github.com/foivz/pi22-zadace-mmihaljev20/files/8316449/2022_03_21.15_57.Office.Lens.pdf)
+
+## 5.2. Zaslon za rezervaciju opreme
+![Zaslon za rezervaciju opreme](https://github.com/foivz/pi22-zadace-mmihaljev20/files/8316450/2022_03_21.15_57.Office.Lens.1.pdf)
+
+## 5.3. Zaslon za evidenciju opreme
+![Zaslon za evidenciju opreme](https://github.com/foivz/pi22-zadace-mmihaljev20/files/8316452/2022_03_21.15_58.Office.Lens.pdf)
